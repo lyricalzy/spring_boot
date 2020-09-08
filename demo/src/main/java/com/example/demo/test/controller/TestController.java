@@ -2,6 +2,7 @@ package com.example.demo.test.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class TestController {
@@ -10,5 +11,12 @@ public class TestController {
     public String home() {
 
         return "index.html";
+    }
+
+    @ResponseBody
+    @RequestMapping("/valueTest")
+    public String valueTest(){
+        String value = "Test String";
+        return value;
     }
 }
